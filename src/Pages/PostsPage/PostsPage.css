@@ -7,8 +7,18 @@
     margin-right: auto;
     background-color: white;
     gap: 2rem;
-    padding: 0 2rem;
 }
+.comment-body{
+    padding: 0rem 2rem;
+    margin-bottom: 2rem;
+}
+.posts-body{
+    padding: 2rem 2rem;
+}
+.comment-hero, .posts-body{
+    flex-grow: 1;
+}
+
 .posts{
     display: flex;
     flex-direction: column;
@@ -53,10 +63,8 @@ textarea[name="postText"]{
     .posts:not(.post-titles .posts),.btn-container{
         width: 60% !important;
     }
-
     .btn-container{
-        margin-left: 1.5rem !important;
-        padding: 0.5rem 0rem !important;
+        padding: 0.5rem !important;
     }
 
     textarea[name="comment"]{
