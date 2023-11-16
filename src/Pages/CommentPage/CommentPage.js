@@ -4,15 +4,16 @@ import "./CommentPage.css"
 import { useState } from "react";
 import {useParams,useNavigate} from "react-router-dom";
 // Components
-import PostCard from "../Postcard/Postcard";
-import Comment from "../Comment/Comment";
-import RecentPosts from "../RecentPosts/RecentPosts";
+import PostCard from "../../components/Postcard/Postcard";
+import Comment from "../../components/Comment/Comment";
+import RecentPosts from "../../components/RecentPosts/RecentPosts";
 import {IoIosArrowBack} from "react-icons/io";
 // modules
 import getCurrentDate from "../../modules/Date";
 import CommentObj from "../../modules/CommentObj";
 
 
+// form where user comments to a posts
 const CommentForm = ({id,allPosts,setAllPosts,postComments,setPostComments})=>{
 
     // form handler
@@ -27,13 +28,12 @@ const CommentForm = ({id,allPosts,setAllPosts,postComments,setPostComments})=>{
         let date = getCurrentDate();
         let text = userComment;
 
-        // modify the comment repository
+        // updating the comment repository
         let newComment = new CommentObj(id1,avatarUrl,name,text,date);
         postComments[id].push(newComment);
         setPostComments({...postComments});
 
-        
-        // modifying the post repository hook to update comment count
+        // modifying the post repository to update comment count
         allPosts[id-1].increaseCommentCount();
         setAllPosts([...allPosts]);
 
@@ -56,9 +56,11 @@ const CommentForm = ({id,allPosts,setAllPosts,postComments,setPostComments})=>{
 
 
 function CommentPage({allPosts,setAllPosts,postComments,setPostComments,allReplies,setAllReplies}){
+
+    // to route back button to home page
     const navigate = useNavigate();
     const routeToHome = ()=>{
-        navigate("/")    
+        navigate("/");    
     }
     const {id} = useParams();
 
@@ -100,9 +102,7 @@ function CommentPage({allPosts,setAllPosts,postComments,setPostComments,allRepli
             <RecentPosts allPosts={allPosts}></RecentPosts>
         </div>
         </div>
-    )
-    
-
+    );
 }
 
 export default CommentPage;

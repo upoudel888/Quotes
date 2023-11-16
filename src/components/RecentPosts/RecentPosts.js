@@ -9,7 +9,7 @@ import { useLocation,useNavigate } from "react-router-dom";
 function RecentPosts({allPosts}){
 
     const navigate = useNavigate();
-    const {hash,pathname,search} = useLocation();
+    const {pathname} = useLocation();
 
     const routeToComment = (post)=>{
         const desiredNavigateLink = `/comments/${post.getID()}`;

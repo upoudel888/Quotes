@@ -1,27 +1,27 @@
 import "./Postcard.css"
-import { useState } from "react";
-// the icons
+// icons
 import {BiUpvote,BiDownvote} from "react-icons/bi";
 import {AiOutlineComment} from "react-icons/ai";
 import {FiBookmark} from "react-icons/fi";
 import {PiShareFat} from "react-icons/pi";
-
+// routing 
 import {useNavigate,useLocation} from "react-router-dom";
 
 const PostCard = ({post,allPosts,setAllPosts})=>{
 
+    // updating the postObj in allPosts repository
     const handleUpvote = ()=>{
         post.setVoteCount(post.voteCount+1);
         setAllPosts([...allPosts]);
     }
     const handleDownvote = ()=>{
         post.setVoteCount(post.voteCount-1);
-        // allPosts[post.getID()-1] = post;
         setAllPosts([...allPosts]);
     }
 
+    // route to comment page of the respective post when comment_button or postCard is clicked
     const navigate = useNavigate();
-    const {hash,pathname,search} = useLocation();
+    const {pathname} = useLocation();
 
     const routeToComment = ()=>{
         const desiredNavigateLink = `/comments/${post.getID()}`;

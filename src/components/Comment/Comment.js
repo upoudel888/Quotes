@@ -1,9 +1,12 @@
-import { useState } from "react";
+//css
 import "./Comment.css";
+//hooks
+import { useState } from "react";
+// icons
 import {AiOutlineComment} from "react-icons/ai";
 import {FaUserAstronaut} from "react-icons/fa";
+// modules
 import CommentObj from "../../modules/CommentObj";
-
 import getCurrentDate from "../../modules/Date";
 
 function Comment({id,allPosts,setAllPosts,commentObj,allReplies,setAllReplies}) {
@@ -12,13 +15,13 @@ function Comment({id,allPosts,setAllPosts,commentObj,allReplies,setAllReplies}) 
     const isNested = commentObj.hasNesetedReplies();
     const replyIDs= commentObj.getNestedRepliesId();
 
-    // to toggle reply button on and off
+    // to toggle reply form on and off
     const [replyBtnStatus,setReplyBtnStatus] = useState(false);
     const handleReplyClick = ()=>{
       setReplyBtnStatus(!replyBtnStatus)
     }
 
-    // creating the handeled form
+    // reply from handler
     const [userReply,setUserReply] = useState("");
     const handleSubmit = (e)=>{
       e.preventDefault();
@@ -46,7 +49,6 @@ function Comment({id,allPosts,setAllPosts,commentObj,allReplies,setAllReplies}) 
     return (
       <div className="comment">
         <div className="user-info">
-          {/* <img className="avatar" src={comment.avatarUrl} alt={comment.name}/> */}
           <div className="avatar"><FaUserAstronaut/></div>
           <div className="user-name bold"> {comment.name}</div>
           <div className="comment-date">{comment.date}</div>
@@ -70,7 +72,7 @@ function Comment({id,allPosts,setAllPosts,commentObj,allReplies,setAllReplies}) 
             </form>
           }
 
-          {/* Recursively displaying the nested Replys here*/}
+          {/* Recursively displaying the nested replys of the comment here*/}
           { isNested &&   
             replyIDs.map(reply_id=>{
 

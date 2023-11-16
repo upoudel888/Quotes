@@ -6,14 +6,14 @@
     box-shadow: 0 0 4px var(--bl-color1-faded);
     border-radius: 5px;
     padding: 1rem;
-    cursor: pointer;
     transition: 0.2s ease-in;
 }
+.posts-body .post-card{
+    cursor: pointer;
+}
 
-
-
-.post-card:hover{
-    box-shadow: 0 0 4px var(--bl-color1) !important;
+.posts-body .post-card:hover{
+    box-shadow: 0 0 2px 2px var(--bl-color1-faded) !important;
 }
 
 .upvote-downvote{
@@ -87,25 +87,6 @@
     justify-content: center;
     gap: 0.2rem;
 }
-
-/* a{
-    text-decoration: none;
-    color: gray;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-    border-radius: 3px;
-    gap: 0.2rem;
-}
-
-a:hover{
-    color: var(--bl-color1);
-    transition: 0.1s ease-in;
-} */
 
 .icon svg{
     /* margin-top: 5%; */

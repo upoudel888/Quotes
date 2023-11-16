@@ -1,7 +1,7 @@
 import Comment from "./Comment/Comment";
-import PostsPage from "./PostsPage/PostsPage";
+import PostsPage from "../Pages/PostsPage/PostsPage";
 import PostCard from "./Postcard/Postcard";
-import CommentPage from "./CommentPage/CommentPage";
+import CommentPage from "../Pages/CommentPage/CommentPage";
 import RecentPosts from "./RecentPosts/RecentPosts";
 
 export{

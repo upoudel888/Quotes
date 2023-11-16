@@ -24,6 +24,13 @@ const Navbar = ()=>{
       </nav>
   )
 }
+const Footer = ()=>{
+  return (
+    <footer>
+      
+    </footer>
+  )
+}
 
 function App() {
 

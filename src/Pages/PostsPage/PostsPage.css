@@ -88,9 +88,7 @@ textarea[name="postText"]{
         margin-left: 0rem !important;
         padding: 0.5rem 2rem !important;
 
-    }
-
-    
+    }  
     .user-and-recents{
         display: none !important;
     }
@@ -104,6 +102,7 @@ textarea[name="postText"]{
     padding: 1.5rem;
     }
 }
+
 @media screen and (max-width: 405px){
     .posts,.btn-container{
         width: 100% !important;
