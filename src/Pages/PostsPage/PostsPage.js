@@ -1,14 +1,17 @@
 import "./PostsPage.css";
-import { useState } from "react";
+import { useState,useContext } from "react";
 // Modules
 import postObj from "../../modules/PostObj";
 import getCurrentDate from "../../modules/Date";
 // Components
 import PostCard from "../../components/Postcard/Postcard";
 import RecentPosts from "../../components/RecentPosts/RecentPosts";
+// Context
+import QuoteContext from "../../QuoteContext";
 
 // A form where user posts quotes
-const PostForm = ({allPosts,setAllPosts,postComments,setPostComments})=>{
+const PostForm = ()=>{
+    const {allPosts,setAllPosts,postComments,setPostComments} = useContext(QuoteContext);
 
     // form handlers
     const [postTitle,setPostTitle] = useState("");
@@ -52,33 +55,24 @@ const PostForm = ({allPosts,setAllPosts,postComments,setPostComments})=>{
     )
 }
 
-function PostsPage({allPosts,setAllPosts,postComments,setPostComments}){
+function PostsPage(){
+    const {allPosts} = useContext(QuoteContext);
 
     return (
         <div className="posts-body">
             <div className="posts">
-                <PostForm allPosts={allPosts}
-                         setAllPosts={setAllPosts}
-                         postComments={postComments}
-                         setPostComments={setPostComments}
-                ></PostForm>
-
+                <PostForm/>
                 <div className="all-posts">
                     {
                         [...allPosts].reverse().map(post =>{
                             return(
-                                <PostCard 
-                                    post={post} 
-                                    key={post.getID()} 
-                                    allPosts = {allPosts}
-                                    setAllPosts={setAllPosts}
-                                ></PostCard>
+                                <PostCard post={post} key={post.getID()}/>
                             )
                         })
                     }
                 </div>
             </div>
-            <RecentPosts allPosts={allPosts}></RecentPosts>
+            <RecentPosts></RecentPosts>
         </div>
     )
 }

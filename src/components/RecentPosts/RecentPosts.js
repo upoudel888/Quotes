@@ -1,13 +1,20 @@
+// css
 import "./RecentPosts.css";
+// icons and images
 import banner from "../../assets/banner.png";
-
 import {FaUserAstronaut} from "react-icons/fa";
+// routing
 import { useLocation,useNavigate } from "react-router-dom";
+// context
+import { useContext } from "react";
+import QuoteContext from "../../QuoteContext";
 
 
 
-function RecentPosts({allPosts}){
-
+function RecentPosts(){
+    const {allPosts} = useContext(QuoteContext);
+    
+    // navigate to the desired post on post_title.click()
     const navigate = useNavigate();
     const {pathname} = useLocation();
 

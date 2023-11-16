@@ -1,4 +1,5 @@
 import "./Postcard.css"
+import { useContext } from "react";
 // icons
 import {BiUpvote,BiDownvote} from "react-icons/bi";
 import {AiOutlineComment} from "react-icons/ai";
@@ -6,8 +7,11 @@ import {FiBookmark} from "react-icons/fi";
 import {PiShareFat} from "react-icons/pi";
 // routing 
 import {useNavigate,useLocation} from "react-router-dom";
+// context
+import QuoteContext from "../../QuoteContext";
 
-const PostCard = ({post,allPosts,setAllPosts})=>{
+const PostCard = ({post})=>{
+    const {allPosts,setAllPosts} = useContext(QuoteContext);
 
     // updating the postObj in allPosts repository
     const handleUpvote = ()=>{

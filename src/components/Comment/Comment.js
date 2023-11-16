@@ -1,15 +1,18 @@
 //css
 import "./Comment.css";
 //hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
 // icons
 import {AiOutlineComment} from "react-icons/ai";
 import {FaUserAstronaut} from "react-icons/fa";
 // modules
 import CommentObj from "../../modules/CommentObj";
 import getCurrentDate from "../../modules/Date";
+// context
+import QuoteContext from "../../QuoteContext";
 
-function Comment({id,allPosts,setAllPosts,commentObj,allReplies,setAllReplies}) {
+function Comment({id,commentObj}) {
+    const {allPosts,setAllPosts,allReplies,setAllReplies} = useContext(QuoteContext);
     // helper variables
     const comment = commentObj.getComment();
     const isNested = commentObj.hasNesetedReplies();
@@ -79,11 +82,7 @@ function Comment({id,allPosts,setAllPosts,commentObj,allReplies,setAllReplies}) 
               return (
                 <Comment 
                 id = {id}
-                allPosts = {allPosts}
-                setAllPosts= {setAllPosts}
                 commentObj = {allReplies[reply_id-1]} 
-                allReplies = {allReplies} 
-                setAllReplies = {setAllReplies}
                 key = {`${id}-${reply_id}`}
                 />
               )

@@ -1,20 +1,24 @@
 // css
 import "./CommentPage.css"
 // hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {useParams,useNavigate} from "react-router-dom";
 // Components
 import PostCard from "../../components/Postcard/Postcard";
 import Comment from "../../components/Comment/Comment";
+// components
 import RecentPosts from "../../components/RecentPosts/RecentPosts";
-import {IoIosArrowBack} from "react-icons/io";
 // modules
 import getCurrentDate from "../../modules/Date";
 import CommentObj from "../../modules/CommentObj";
-
+// context
+import QuoteContext from "../../QuoteContext";
+// icons
+import {IoIosArrowBack} from "react-icons/io";
 
 // form where user comments to a posts
-const CommentForm = ({id,allPosts,setAllPosts,postComments,setPostComments})=>{
+const CommentForm = ({id})=>{
+    const {allPosts,setAllPosts,postComments,setPostComments}  = useContext(QuoteContext);
 
     // form handler
     const [userComment,setUserComment] = useState("");
@@ -55,7 +59,8 @@ const CommentForm = ({id,allPosts,setAllPosts,postComments,setPostComments})=>{
 }
 
 
-function CommentPage({allPosts,setAllPosts,postComments,setPostComments,allReplies,setAllReplies}){
+function CommentPage(){
+    const {allPosts,postComments} = useContext(QuoteContext);
 
     // to route back button to home page
     const navigate = useNavigate();
@@ -72,34 +77,19 @@ function CommentPage({allPosts,setAllPosts,postComments,setPostComments,allRepli
         </div>
         <div className="comment-body">
             <div className="posts">
-                <PostCard post={allPosts[id-1]}                                  
-                        allPosts = {allPosts}
-                        setAllPosts={setAllPosts}
-                ></PostCard>
-                <CommentForm id={id} 
-                            postComments = {postComments} 
-                            setPostComments={setPostComments}
-                            allPosts = {allPosts}
-                            setAllPosts = {setAllPosts}
-                ></CommentForm>
+                <PostCard post={allPosts[id-1]}/>
+                <CommentForm id={id}></CommentForm>
                 <div className="allComments">
                     {
                         postComments[id].map(comment =>{
                             return (
-                                <Comment 
-                                id = {id}
-                                allPosts = {allPosts}
-                                setAllPosts={setAllPosts}
-                                commentObj = {comment} 
-                                allReplies = {allReplies} 
-                                setAllReplies = {setAllReplies}
-                                key = {comment.getId()}/>
+                                <Comment id = {id} commentObj = {comment} key = {comment.getId()}/>
                             )
                         })
                     }
                 </div>
             </div>
-            <RecentPosts allPosts={allPosts}></RecentPosts>
+            <RecentPosts></RecentPosts>
         </div>
         </div>
     );
