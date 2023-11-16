@@ -1,8 +1,8 @@
-# Quotes
+# Quotes ( Frontend )
 
 ## Anonymously Share Wisdom
 
-Quotes is a React-powered platform (Just Frontend)enabling users to anonymously post and discover impactful quotes from famous personalities. Embrace motivation through the power of shared wisdom.
+Quotes is a React-powered platform enabling users to anonymously post and discover impactful quotes from famous personalities. Embrace motivation through the power of shared wisdom.
 
 ### Features:
 
