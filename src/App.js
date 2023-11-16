@@ -7,6 +7,8 @@ import {BrowserRouter as Router,Routes,Route,} from "react-router-dom";
 import { QuoteProvider } from './QuoteContext';
 // assets
 import logo from './assets/logo.svg';
+// import { FaInstagram,FaLinkedin,FaFacebook,FaGithub} from "react-icons/fa";
+
 
 const Navbar = ()=>{
   return (
@@ -16,6 +18,13 @@ const Navbar = ()=>{
           <div className="quotes rotate-in-2-ccw">&#10078;</div>
         </div>
       </nav>
+  )
+}
+const Footer = ()=>{
+  return(
+    <footer>
+        <div className="copyright">&copy; Quotes 2022 | All rights reserved.</div>
+    </footer>
   )
 }
 
@@ -33,6 +42,8 @@ function App() {
         </Routes>
         </QuoteProvider>
       </Router>
+
+      <Footer></Footer>
 
     </>
     
