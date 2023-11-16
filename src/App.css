@@ -33,13 +33,22 @@
 
 body{
     background-color: var(--bl-color1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 
 #root{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 992px;
+        height: 100vh;
+        background-color: white;
 }
 
 nav{
@@ -60,6 +69,7 @@ nav{
 .logo{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .logo img{
@@ -75,16 +85,21 @@ nav{
     /* transform: translateY(-5rem); */
 }
 footer{
-    background-color: var(--bl-color1-faded);
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: var(--font-small);
-    width: 992px;
+    width: 100%;
+    position: relative;
+    height: 2rem;
+    border: none;
+    
 }
 
-.footer-links{
+
+/* .footer-links{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -92,10 +107,13 @@ footer{
         font-size: var(--font-lrg);
         gap: 1rem;
         width: 20rem;
-}
+} */
 .copyright{
         height: 2rem;
         line-height: 2rem;
+        width: 100%;
+        text-align: center;
+        background-color: var(--bl-color1-faded);
 }
 .rotate-in-2-ccw {
 	-webkit-animation: rotate-in-2-ccw 0.5s 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
