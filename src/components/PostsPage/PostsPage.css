@@ -1,0 +1,126 @@
+.posts-body,.comment-body{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 992px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    background-color: white;
+    gap: 2rem;
+}
+.posts-body{
+    padding: 2rem;
+}
+.comment-body{
+    padding: 0rem 2rem 2rem 2rem;
+}
+.posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    gap: 2rem;
+}
+
+.all-posts{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.post-btn{
+    float: right;
+}
+
+textarea[name="postTitle"]{
+    height: 2.5rem;
+}
+textarea[name="postText"]{
+    height: 5rem;
+}
+
+
+@media screen and (max-width: 992px){
+    .posts-body,.posts,nav,.comment-hero,.comment-body{
+        width: 100% !important;
+    }
+
+    .posts-body,.comment-body{
+        justify-content: space-evenly;
+        gap: 0rem !important;
+    }
+    .posts-body{
+        padding: 2rem 0rem 0rem 0rem !important;
+    }
+    .comment-body{
+        padding: 0rem !important;
+    }
+    
+    
+    .posts:not(.post-titles .posts),.btn-container{
+        width: 60% !important;
+    }
+
+    .btn-container{
+        margin-left: 1.5rem !important;
+        padding: 0.5rem 0rem !important;
+    }
+
+    textarea[name="comment"]{
+        width: auto;
+    }
+    .post-card form button{
+        float: none;
+    }
+}
+@media screen and (max-width: 688px){
+    .posts:not(.post-titles .posts),.btn-container{
+        width: 100% !important;
+    }
+    .posts-body{
+        padding: 2rem  !important;
+    }
+    .comment-body{
+        padding: 0rem 2rem 2rem 2rem !important;
+    }
+    .btn-container{
+        margin-left: 0rem !important;
+        padding: 0.5rem 2rem !important;
+
+    }
+
+    
+    .user-and-recents{
+        display: none !important;
+    }
+    .comment{
+        width: 100%;
+    }
+    .post-card{
+        width: 100%;
+    }
+    .post{
+    padding: 1.5rem;
+    }
+}
+@media screen and (max-width: 405px){
+    .posts,.btn-container{
+        width: 100% !important;
+    }
+    .posts-body{
+        padding: 1rem  !important;
+    }
+    .comment-body{
+        padding: 0rem 1rem 1rem 1rem !important;
+    }
+    .btn-container{
+        margin-left: 0rem !important;
+        padding: 0.5rem 1rem !important;
+
+    }
+    .user-options{
+        gap: 1rem !important;
+    }
+    
+}

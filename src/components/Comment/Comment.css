@@ -1,0 +1,114 @@
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.upvote-btn{
+    font-size: var(--font-lg);
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap : 0.5rem;
+}
+
+.avatar{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 2px solid var(--bl-color1-faded);
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.user-name{
+    font-size: var(--font-xsmall);
+    font-weight: bold;
+    color : black;
+}
+
+.comment-date{
+    font-size: var(--font-xsmall);
+    color : gray;
+}
+.comment-reply{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    border-left : 2px solid var(--bl-color1-faded);
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.3rem;
+    cursor: pointer;
+    height: 2rem;
+    font-size: var(--font-small);
+    color : gray;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.btn:hover{
+    color : var(--bl-color1);
+    transition: 0.2s ease-in;
+}
+
+text,textarea{
+    padding: 0.5rem;
+    width: 100%;
+    border : 2px solid var(--bl-color1-faded);
+    outline: none;
+    border-radius: 3px;
+    resize: none;
+}
+.post-card textarea{
+    height : 6rem;
+}
+text:focus,textarea:focus {
+    border: 2px solid var(--bl-color1-faded) !important;
+    box-shadow: 0 0 2px var(--bl-color1) !important;
+    outline: none;
+}
+
+
+.comment .comment{
+    transform: translateX(-0.75rem);
+    width: calc(100% + 0.75rem);
+
+}
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.form-btn{
+    background-color: var(--bl-color1-faded);
+    padding: 0.4rem;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+    width: 5.6rem;
+    margin-bottom: 0.5rem;
+    
+}
+.post-card .form-btn{
+    align-self: flex-end;
+}
+
+.form-btn:hover{
+    box-shadow: 0 0 2px var(--bl-color1);
+}
+

@@ -1,0 +1,12 @@
+.comment-hero{
+    background-color: white;
+}
+.btn-container{
+    width: 70%;
+    padding: 0.5rem 2.2rem;
+}
+.btn-container .btn{
+    color: black;
+    float: right;
+    
+}
