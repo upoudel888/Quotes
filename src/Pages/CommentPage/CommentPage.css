@@ -1,5 +1,6 @@
 .comment-hero{
     background-color: white;
+    min-height: 92vh;
 }
 .btn-container{
     width: 70%;
